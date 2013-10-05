@@ -1,0 +1,24 @@
+def write_file(outfilename):
+    outfile = open(outfilename, 'w')
+    outfile.write('Line # 1\n')
+    outfile.write('Line # 2\n')
+    outfile.write('Line # 3\n')
+    outfile.close()
+def append_file(outfilename):
+    outfile = open(outfilename, 'a')
+    outfile.write('Line # 4\n')
+    outfile.write('Line # 5\n')
+    outfile.close()
+def read_file(infilename):
+    infile = open(infilename, 'r')
+    for line in infile:
+        print line.rstrip()
+    infile.close()
+def test():
+    filename = 'temp_file.txt'
+    write_file(filename)
+    read_file(filename)
+    append_file(filename)
+    print '­' * 50
+    read_file(filename)
+test()
